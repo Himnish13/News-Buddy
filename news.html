@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>YOYO</h1>
+    <input type="text" id="search">
+    <button type="submit">Search</button>
+    <p></p>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+      <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+  
+        // Fetch your API_KEY
+        const API_KEY = "AIzaSyCc3Xt4XtPkti01137wivIHV_QUykYMbLo";
+  
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(API_KEY);
+  
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+        let p=document.querySelector("p");
+        let h=document.querySelector("h1");
+        let inp=document.querySelector("input");
+        let btn=document.querySelector("button");
+        let smtg;
+        btn.addEventListener("click",function oops()
+    {
+         smtg=inp.value;
+         run(smtg);
+    });
+
+        async function run(prompt) {
+//         const prompt = `The story is simple - good guys on a train, bad guys board the train, and what follows is two hours of non-stop smash you brains out gratuitous violence. The characters are enjoyable to watch and chemistry is pretty good. I liked the bad guy even though he reminded me of Pauly Shore.
+//                   The story framework is quite simple but the story progresses in unexpected ways. It constantly adds to it so the story doesn't feel flat.
+//                   Yes, it has some flaws but doesn't leave you too much time to question anything. Just buy your popcorn and go for it.Summarize this paragraph.
+// `
+            
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  p.innerText=text;
+  
+}
+
+
+    </script>
+</body>
+</html>
