@@ -1,58 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="hi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Dosis", sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: "Moderustic", sans-serif;
+            font-size: 3rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #search {
+            width: 100%;
+            max-width: 1300px;
+            height: 60px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 15px;
+        }
+
+        button {
+          margin-top: 90px;
+            font-family: "Moderustic", sans-serif;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #f5f5e5;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e0e0cc;
+        }
+
+        button:active {
+            background-color: blanchedalmond;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: justify;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            min-height: 150px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>YOYO</h1>
-    <input type="text" id="search">
-    <button type="submit">Search</button>
+  <div id="navbar">
+    <span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" viewBox="0 0 48 48">
+        <path
+          d="M 7.5 6 C 5.0324991 6 3 8.0324991 3 10.5 L 3 35.5 C 3 39.071938 5.9280619 42 9.5 42 L 38.5 42 C 42.071938 42 45 39.071938 45 35.5 L 45 20.5 C 45 18.032499 42.967501 16 40.5 16 L 39 16 L 39 10.5 C 39 8.0324991 36.967501 6 34.5 6 L 7.5 6 z M 7.5 9 L 34.5 9 C 35.346499 9 36 9.6535009 36 10.5 L 36 17.253906 A 1.50015 1.50015 0 0 0 36 17.740234 L 36 34.5 A 1.50015 1.50015 0 1 0 39 34.5 L 39 19 L 40.5 19 C 41.346499 19 42 19.653501 42 20.5 L 42 35.5 C 42 37.450062 40.450062 39 38.5 39 L 9.5 39 C 7.5499381 39 6 37.450062 6 35.5 L 6 10.5 C 6 9.6535009 6.6535009 9 7.5 9 z M 10.5 15 A 1.50015 1.50015 0 1 0 10.5 18 L 31.5 18 A 1.50015 1.50015 0 1 0 31.5 15 L 10.5 15 z M 10.5 23 A 1.50015 1.50015 0 0 0 9 24.5 L 9 31.5 A 1.50015 1.50015 0 0 0 10.5 33 L 17.5 33 A 1.50015 1.50015 0 0 0 19 31.5 L 19 24.5 A 1.50015 1.50015 0 0 0 17.5 23 L 10.5 23 z M 23.5 23 A 1.50015 1.50015 0 1 0 23.5 26 L 31.5 26 A 1.50015 1.50015 0 1 0 31.5 23 L 23.5 23 z M 12 26 L 16 26 L 16 30 L 12 30 L 12 26 z M 23.5 30 A 1.50015 1.50015 0 1 0 23.5 33 L 31.5 33 A 1.50015 1.50015 0 1 0 31.5 30 L 23.5 30 z">
+        </path>
+      </svg></span>
+    <span class="nbelements"><a href="hi.html">Home</a></span>
+    <span class="nbelements"><a href="#">Latest News</a></span>
+    <span class="nbelements"><a href="news.html">Summarizer</a></span>
+    <span class="nbsrch"><input type="text" id="srchbar" placeholder="Type and press Enter..."></span>
+  </div>
+    <input type="text" id="search" placeholder="Enter your prompt...">
+    <button type="submit">Summarize</button>
     <p></p>
+
     <script type="importmap">
         {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
         }
-      </script>
-      <script type="module">
+    </script>
+    <script type="module">
         import { GoogleGenerativeAI } from "@google/generative-ai";
-  
-        // Fetch your API_KEY
+
         const API_KEY = "AIzaSyCc3Xt4XtPkti01137wivIHV_QUykYMbLo";
-  
-        // Access your API key (see "Set up your API key" above)
         const genAI = new GoogleGenerativeAI(API_KEY);
-  
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-        let p=document.querySelector("p");
-        let h=document.querySelector("h1");
-        let inp=document.querySelector("input");
-        let btn=document.querySelector("button");
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        let p = document.querySelector("p");
+        let inp = document.getElementById("search");
+        let btn = document.querySelector("button");
         let smtg;
-        btn.addEventListener("click",function oops()
-    {
-         smtg=inp.value;
-         run(smtg);
-    });
+
+        btn.addEventListener("click", function () {
+            smtg = inp.value;
+            run(smtg);
+        });
 
         async function run(prompt) {
-//         const prompt = `The story is simple - good guys on a train, bad guys board the train, and what follows is two hours of non-stop smash you brains out gratuitous violence. The characters are enjoyable to watch and chemistry is pretty good. I liked the bad guy even though he reminded me of Pauly Shore.
-//                   The story framework is quite simple but the story progresses in unexpected ways. It constantly adds to it so the story doesn't feel flat.
-//                   Yes, it has some flaws but doesn't leave you too much time to question anything. Just buy your popcorn and go for it.Summarize this paragraph.
-// `
-            
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  p.innerText=text;
-  
-}
-
-
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = await response.text();
+            p.innerText = text;
+        }
     </script>
 </body>
+
 </html>
