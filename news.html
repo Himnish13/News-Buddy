@@ -92,7 +92,7 @@
   </div>
     <input type="text" id="search" placeholder="Enter your prompt...">
     <button type="submit">Summarize</button>
-    <p></p>
+    <p>I know you are too lazy to read the article, so paste it in here and tap enter..!</p>
 
     <script type="importmap">
         {
@@ -119,7 +119,7 @@
         });
 
         async function run(prompt) {
-            const result = await model.generateContent(prompt);
+            const result = await model.generateContent(`${prompt}.Summarize this`);
             const response = await result.response;
             const text = await response.text();
             p.innerText = text;
