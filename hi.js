@@ -1,6 +1,6 @@
 const defaultUrl = 'https://api.currentsapi.services/v1/latest-news?' +
                    'language=en&' + 
-                   'apiKey=Rg6bJBSmrCFyCtCLt7wP_0yhz7A15C56sGs5AcbTbAHrHcFH';
+                   'apikey=';
 
 let buttons = document.getElementsByClassName("button");
 let hiddenInput = document.getElementById("srchbar");
